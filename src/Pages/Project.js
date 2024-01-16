@@ -5,7 +5,6 @@ function Projects() {
   return (
     <div className="App">
       <Navbar />
-
       <Projekan />
     </div>
   );
