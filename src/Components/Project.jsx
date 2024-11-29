@@ -30,6 +30,8 @@ import UnixPayment from "../assets/CrossPlat/Unix_Payment.png";
 import UnixPin from "../assets/CrossPlat/Unix_Pin.png";
 import UnixPulsa from "../assets/CrossPlat/Unix_Pulsa.png";
 
+import MobAppSem5LAB from "../assets/Kotlin1.png";
+
 const reviews = [
   {
     name: "01 Fokus Ultimagz",
@@ -55,6 +57,11 @@ const reviews = [
     name: "05 Unix App",
     image: UnixHome,
     link: "/project/unix-app",
+  },
+  {
+    name: "06 Posting App",
+    image: MobAppSem5LAB,
+    link: "/project/Posting-App",
   },
   {
     name: "06 Flix Flow",
