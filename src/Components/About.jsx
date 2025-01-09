@@ -27,7 +27,17 @@ const accordionData = [
   },
   {
     id: 3,
-    title: "03 Languages",
+    title: "03 Organization Experience",
+    content: [
+      "UMN FESTIVAL 2024 - Web Coordinator",
+      "Ultimagz - IT Department",
+      "Commfest UMN - Security and Equipment",
+      "OMB UMN - Person in Charge",
+    ],
+  },
+  {
+    id: 4,
+    title: "04 Languages",
     content: [
       "Indonesian (Native)",
       "English (Professional working proficiency)",
@@ -38,7 +48,7 @@ const accordionData = [
 function About() {
   return (
     <div
-      className="box-border w-full h-fit p-10 md:px-20 md:py-10 bg-[#E5E5E5]"
+      className="box-border w-full h-fit p-10 md:px-20 md:py-10 bg-[#E5E5E5] text-[#7f8692]"
       id="About"
     >
       <h1
@@ -153,10 +163,14 @@ function About() {
                   </h1>
                 </div>
                 <div className="collapse-content">
-                  {/* Gunakan Flexbox untuk menata daftar item dalam 2 kolom per baris */}
                   <ul className="flex flex-wrap">
                     {item.content.map((point, index) => (
-                      <li key={index} className="w-1/2 mb-2 break-words">
+                      <li
+                        key={index}
+                        className={`${
+                          item.id === 1 ? "w-1/2" : "w-full"
+                        } mb-2 break-words`}
+                      >
                         {point}
                       </li>
                     ))}

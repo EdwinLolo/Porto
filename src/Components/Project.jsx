@@ -86,7 +86,7 @@ function Project() {
     >
       <h1
         style={{ fontFamily: "Neue Normal, sans-serif" }}
-        className="text-5xl"
+        className="text-5xl text-[#7f8692]"
       >
         Project
       </h1>
