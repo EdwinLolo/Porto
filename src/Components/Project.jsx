@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/keyboard";
 import "swiper/css/mousewheel";
 import { Pagination, Keyboard, Mousewheel } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Font.css";
 
 // import Image
 import UTSsem2lab from "../assets/UTS_LAB_Sem2.png";
 import UTSsem2 from "../assets/UTS_LEC_Sem2.png";
-import UASsem2lab from "..//assets/UAS_Sem2_1.png";
+import UASsem2lab from "../assets/UAS_Sem2_1.png";
 
 import UTSsem3lab from "../assets/UTS_LAB_Sem3.png";
 import UASsem3 from "../assets/UAS_Sem3.png";
@@ -79,20 +81,29 @@ const reviews = [
 ];
 
 function Project() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div
       className="box-border w-full h-fit p-10 md:px-20 md:py-10 bg-[#E5E5E5]"
       id="Project"
+      data-aos="fade-up"
     >
       <h1
         style={{ fontFamily: "Neue Normal, sans-serif" }}
         className="text-5xl text-[#7f8692]"
+        data-aos="fade-right"
       >
         Project
       </h1>
-      <div className="w-full mt-6 border-b-[3px] border-[#000000]"></div>
+      <div
+        className="w-full mt-6 border-b-[3px] border-[#000000]"
+        data-aos="fade-right"
+      ></div>
 
-      <div className="box-border h-full pt-10">
+      <div className="box-border h-full pt-10" data-aos="fade-up">
         <Swiper
           spaceBetween={30}
           pagination={{ clickable: true }}
@@ -109,7 +120,7 @@ function Project() {
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index} className="h-full px-3 py-2 rounded-md">
-              <a href="#" target="_blank" className="flex flex-col">
+              <a href={review.link} target="_blank" className="flex flex-col">
                 <div className="flex flex-col h-full p-3">
                   <h1
                     className="mb-3 text-[#282828] text-md"
@@ -117,8 +128,11 @@ function Project() {
                   >
                     {review.name}
                   </h1>
-                  {/* <p>{review.text}</p> */}
-                  <img src={review.image} alt="UTSsem2lab" className="w-auto" />
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    className="w-auto"
+                  />
                 </div>
               </a>
             </SwiperSlide>

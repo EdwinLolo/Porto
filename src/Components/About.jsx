@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Font.css";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const accordionData = [
   {
@@ -46,21 +49,33 @@ const accordionData = [
 ];
 
 function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div
       className="box-border w-full h-fit p-10 md:px-20 md:py-10 bg-[#E5E5E5] text-[#7f8692]"
       id="About"
+      data-aos="fade-up"
     >
       <h1
         style={{ fontFamily: "Neue Normal, sans-serif" }}
         className="text-5xl"
+        data-aos="fade-right"
       >
         About Me
       </h1>
-      <div className="w-full mt-6 border-b-[3px] border-[#000000]"></div>
+      <div
+        className="w-full mt-6 border-b-[3px] border-[#000000]"
+        data-aos="fade-right"
+      ></div>
 
       <div className="box-border flex flex-col w-full h-full gap-12 pt-10 md:flex-row">
-        <div className="items-center w-full aboutMeContainer md:w-2/5">
+        <div
+          className="items-center w-full aboutMeContainer md:w-2/5"
+          data-aos="fade-up"
+        >
           <h1
             style={{ fontFamily: "Neue Normal, sans-serif" }}
             className="text-md md:text-lg lg:text-2xl"
@@ -80,7 +95,10 @@ function About() {
             developing my technical abilities and contribute to innovative tech
             solutions.
           </h1>
-          <div className="inline-flex justify-center mt-4 sm:ml-auto sm:justify-start">
+          <div
+            className="inline-flex justify-center mt-4 sm:ml-auto sm:justify-start"
+            data-aos="fade-up"
+          >
             <a
               href="https://www.facebook.com/edwin.fedoral/"
               target="_blank"
@@ -156,7 +174,7 @@ function About() {
             </a>
           </div>
         </div>
-        <div className="w-full accordion md:w-3/5">
+        <div className="w-full accordion md:w-3/5" data-aos="fade-up">
           <h1
             style={{ fontFamily: "Neue Normal, sans-serif" }}
             className="text-lg md:text-3xl"
@@ -168,6 +186,7 @@ function About() {
               <div
                 key={item.id}
                 className="border collapse collapse-arrow join-item border-base-300"
+                data-aos="fade-up"
               >
                 <input
                   type="radio"
